@@ -1,25 +1,17 @@
 import asyncio
 import time
+from playwright.async_api import async_playwright
 import sys
 import json
 import urllib.parse
 import re
-import subprocess
-
-# Playwright 자동 설치
-try:
-    from playwright.async_api import async_playwright
-except ImportError:
-    subprocess.run([sys.executable, "-m", "pip", "install", "playwright"], check=True)
-    subprocess.run([sys.executable, "-m", "playwright", "install", "chromium", "--with-deps"], check=True)
-    from playwright.async_api import async_playwright
 
 # UTF-8 인코딩으로 설정
 sys.stdout.reconfigure(encoding='utf-8')
 
 async def main(url):
     async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=True)
+        browser = await p.chromium.launch(headless=False)
         page = await browser.new_page()
         await page.goto(url)
         

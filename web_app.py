@@ -1,5 +1,6 @@
 import streamlit as st
 import math
+import pandas as pd
 import subprocess
 import json
 import os
@@ -135,6 +136,7 @@ if st.session_state.current_rating and st.session_state.current_reviews:
                 "누적 리뷰수": cumulative
             })
         
-        st.dataframe(results, use_container_width=True, hide_index=True)
+        df = pd.DataFrame(results)
+        st.dataframe(df, use_container_width=True, hide_index=True)
     
     

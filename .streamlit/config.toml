@@ -1,9 +1,0 @@
-[client]
-showErrorDetails = true
-
-[logger]
-level = "debug"
-
-[server]
-enableXsrfProtection = true
-maxUploadSize = 200
