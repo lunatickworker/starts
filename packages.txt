@@ -1,14 +1,1 @@
-chromium
-libatk-bridge2.0-0
-libgbm-dev
-libgbm1
-libnss3
-libxss1
-libappindicator3-1
-libindicator7
-xdg-utils
-fonts-liberation
-libappindicator1
-libindicator7
-gconf-service
-google-chrome-stable
+wget
