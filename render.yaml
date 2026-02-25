@@ -2,9 +2,12 @@ services:
   - type: web
     name: google-maps-calculator
     env: python
+    pythonVersion: 3.11
     plan: free
-    buildCommand: pip install --upgrade pip && pip install -r requirements.txt && python -m playwright install --with-deps
+    buildCommand: pip install --upgrade pip setuptools wheel && pip install -r requirements.txt && playwright install chromium && playwright install-deps chromium
     startCommand: streamlit run web_app.py --server.port=10000 --server.address=0.0.0.0
     envVars:
       - key: PYTHONUNBUFFERED
         value: true
+      - key: PLAYWRIGHT_BROWSERS_PATH
+        value: /opt/render/.cache/ms-playwright
