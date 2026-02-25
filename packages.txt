@@ -1,1 +1,1 @@
-wget
+# Streamlit Cloud automatically installs Playwright dependencies
