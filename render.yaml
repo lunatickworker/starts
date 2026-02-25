@@ -4,7 +4,7 @@ services:
     env: python
     pythonVersion: 3.11
     plan: free
-    buildCommand: pip install --upgrade pip setuptools wheel && pip install --only-binary :all: pandas==2.1.4 || pip install pandas==2.1.4 && pip install -r requirements.txt && playwright install chromium
+    buildCommand: pip install --upgrade pip && pip install --no-cache-dir --only-binary :all: -r requirements.txt && playwright install chromium
     startCommand: streamlit run web_app.py --server.port=10000 --server.address=0.0.0.0
     envVars:
       - key: PYTHONUNBUFFERED
