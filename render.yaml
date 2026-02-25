@@ -3,7 +3,7 @@ services:
     name: google-maps-calculator
     env: python
     plan: free
-    buildCommand: pip install -r requirements.txt && python -m playwright install chromium
+    buildCommand: pip install --upgrade pip && pip install -r requirements.txt && python -m playwright install --with-deps
     startCommand: streamlit run web_app.py --server.port=10000 --server.address=0.0.0.0
     envVars:
       - key: PYTHONUNBUFFERED
