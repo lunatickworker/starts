@@ -6,7 +6,7 @@ import json
 import urllib.parse
 import re
 
-# UTF-8 인코딩으로 설정
+# UTF-8 디코딩으로 설정
 sys.stdout.reconfigure(encoding='utf-8')
 
 async def main(url):
